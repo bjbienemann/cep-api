@@ -7,6 +7,7 @@
 * Maven
 * Docker
 * Docker compose
+* PostgreSQL
 
 ### Construir
 
@@ -28,6 +29,6 @@ Link para acessar as específicações com swegger-ui:
 
 ### Referência
 
-<https://quarkus.io/get-started/>
+<https://quarkus.io/get-started/><br>
 <https://github.com/quarkusio/quarkus-quickstarts.git>
 
