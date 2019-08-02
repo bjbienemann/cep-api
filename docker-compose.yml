@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  db:
+    build:
+      dockerfile: Dockerfile
+      context: ./db
+    image: 'bienemann/postgres:10.5'
+    ports:
+      - '5432:5432'
+    environment:
+      - 'POSTGRES_DB=cep'
+      - 'POSTGRES_PASSWORD=cep@123'
+    volumes:
+     - '/data'
+  
+  api:
+    build:
+      dockerfile: src/main/docker/Dockerfile.jvm
+      context: ./
+    image: 'bienemann/cep-api:latest'
+    ports:
+      - '8080:8080'
+    links:
+      - 'db:PSQL'
+      
